@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+:root {
+  --primary-color: #282c2d;
+  --secondary-color: #f7f9f4;
+  --tertiary-color: #34393b;
+  --quaternary-color: #6d787a;
+  --quinary-color: rgb(100, 113, 114);
+  --animation-default: all 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}

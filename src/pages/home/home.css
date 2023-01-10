@@ -1,0 +1,188 @@
+.main-container {
+  background-color: var(--primary-color);
+  height: 100vh;
+}
+/* *Header */
+.header-container {
+  padding: 30px 50px;
+}
+.header-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+.header-container li {
+  list-style: none;
+  cursor: pointer;
+  transition: var(--animation-default);
+}
+.header-container li:hover {
+  transform: scale(1.2);
+}
+/* *Contador */
+
+/* !header contador */
+.contador {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contador > *:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+.header-pomodoro-container {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  background-color: var(--tertiary-color);
+  border-radius: 50px;
+  width: 100%;
+  box-shadow: -5px -5px 10px #323232, 5px 5px 10px #272727;
+}
+.header-pomodoro-container li {
+  list-style: none;
+  cursor: pointer;
+  width: 120px;
+  height: 43px;
+  border-radius: 50px;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--quinary-color);
+}
+/* !pomodoro contador */
+/* countdown design */
+.grand-father-pomodoro {
+  width: 100%;
+  overflow: hidden;
+}
+.container-father-pomodoro {
+  width: 200%;
+  display: flex;
+}
+.container-father-pomodoro > * {
+  width: 100%;
+  padding: 12px;
+}
+.container-pomodoro {
+  background: linear-gradient(113.35deg, #242829 14.43%, #2b2f30 83.01%);
+  box-shadow: -5px -5px 10px #1f2223, 5px 5px 10px #313637;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.container-pomodoro::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.dots {
+  width: 95%;
+  border: 2px dashed #a7a199;
+  border-radius: 50%;
+  animation: rotacion 25s infinite linear;
+}
+.dots::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+@keyframes rotacion {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container-pomodoro-child {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  background: linear-gradient(113.35deg, #242829 14.43%, #2b2f30 83.01%);
+  box-shadow: inset -5px -5px 10px #1f2223, inset 5px 5px 10px #313637;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--secondary-color);
+  font-weight: 200;
+  font-size: 70px;
+}
+/* countdown design buttons */
+.container-icons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.container-icons button {
+  background-color: transparent;
+  border: none;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--animation-default);
+}
+.repeat {
+  font-size: 50px;
+  font-weight: 100;
+  color: var(--secondary-color);
+  transition: var(--animation-default);
+}
+.second:hover {
+  transform: scale(1.05);
+  background-color: var(--secondary-color);
+  box-shadow: inset -5px -5px 10px #a8a8a8, inset 5px 5px 10px #ffffff;
+}
+.container-icons :nth-child(2):hover .repeat {
+  color: var(--primary-color);
+}
+
+.control-time {
+  position: absolute;
+  transition: var(--animation-default);
+}
+.play,
+.pause {
+  z-index: 20;
+}
+.play {
+  opacity: 1;
+}
+.pause {
+  opacity: 0;
+}
+.button-controller:hover {
+  transform: scale(1.05);
+}
+.button-controller:active {
+  transform: scale(0.98);
+  transition: var(--animation-default) transform;
+}
