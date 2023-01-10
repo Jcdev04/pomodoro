@@ -11,9 +11,9 @@ function Pomodoro() {
           <Work />
           <Buttons />
         </div>
-        <div>
+        {/* <div>
           <Tasks />
-        </div>
+        </div> */}
       </div>
     </div>
   );
