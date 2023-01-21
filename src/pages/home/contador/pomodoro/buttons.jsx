@@ -1,19 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Pause, Play, Repeat } from "iconoir-react";
 
-function Buttons() {
-  const [className, setClassName] = useState("play");
-  const [backgroundColor, setBackgroundColor] = useState("#f7f9f4");
-  const [backgroundColor2, setBackgroundColor2] = useState("transparent");
-
-  function handleClick() {
-    setBackgroundColor(backgroundColor2);
-    setBackgroundColor2(backgroundColor);
-    if (className === "play") {
+function Buttons({
+  time,
+  setHoras,
+  setMinutos,
+  setSegundos,
+  setRunning,
+  running,
+}) {
+  /* Styles */
+  const [className, setClassName] = useState("play"),
+    [backgroundColor, setBackgroundColor] = useState("transparent"),
+    [backgroundColor2, setBackgroundColor2] = useState("#f7f9f4");
+  useEffect(() => {
+    if (running) {
       setClassName("pause");
     } else {
       setClassName("play");
     }
+    setBackgroundColor(backgroundColor2);
+    setBackgroundColor2(backgroundColor);
+  }, [running]);
+  /* Controls */
+  function handleClick() {
+    setRunning((prevRunning) => !prevRunning);
+  }
+  function handleReset() {
+    setHoras(time.horas);
+    setMinutos(time.minutos);
+    setSegundos(time.segundos);
   }
   let name = `control-time ${className}`;
   return (
@@ -38,7 +54,7 @@ function Buttons() {
           strokeWidth={0.5}
         />
       </button>
-      <button className="button-controller second">
+      <button className="button-controller second" onClick={handleReset}>
         <Repeat
           className="repeat"
           fontSize={50}
